@@ -1,0 +1,7 @@
+owntracks_phone:
+  name: coolesty
+  mac: 40:9C:28:9F:F9:BE
+  picture: https://www.home-assistant.io/images/favicon-192x192.png
+  gravatar: coolesty@gmail.com
+  track: yes
+  hide_if_away: no

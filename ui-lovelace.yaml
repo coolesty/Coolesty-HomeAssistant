@@ -1,0 +1,19 @@
+title: My Awesome Home
+views:
+    # View tab title.
+  - title: Example
+    panel: true
+    # Makes the first card fill the view
+
+    cards:
+      - type: map
+        aspect_ratio: 30%
+        default_zoom: 16
+        entities:
+          - device_tracker.owntracks_phone
+          - zone.home
+      
+      - type: markdown
+        title: Lovelace
+        content: >
+          Welcome to your **Lovelace UI**.

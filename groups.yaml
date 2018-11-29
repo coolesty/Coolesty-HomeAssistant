@@ -1,0 +1,20 @@
+darksky_group:
+  name: DarkSky
+  entities:
+    - sensor.darksky_temperature
+    - sensor.darksky_humidity
+    - sensor.darksky_daytime_high_temperature
+    - sensor.darksky_overnight_low_temperature
+    - sensor.darksky_pressure
+    - sensor.darksky_cloud_coverage
+
+host_system_group:
+  name: Host System
+  entities:
+    - sensor.disk_use_percent_config
+    - sensor.last_boot
+    - sensor.load_1m
+    - sensor.memory_use_percent
+    - sensor.network_in_eth0
+    - sensor.network_out_eth0
+    - sensor.processor_use

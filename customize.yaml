@@ -1,0 +1,15 @@
+sensor.darksky_cloud_coverage:
+  friendly_name: "Cloud Coverage"
+sensor.darksky_daytime_high_temperature:
+  friendly_name: "Day High"
+sensor.darksky_humidity:
+  friendly_name: "Humidity"
+sensor.darksky_overnight_low_temperature:
+  friendly_name: "Day Low"
+sensor.darksky_pressure:
+  friendly_name: "Pressure"
+sensor.darksky_temperature:
+  friendly_name: "Temperature"
+
+device_tracker.owntracks_phone:
+  friendly_name: "Coolesty"

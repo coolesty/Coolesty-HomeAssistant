@@ -12,19 +12,12 @@ homeassistant:
   time_zone: Asia/Seoul
   # Customization file
   customize: !include customize.yaml
-  # Weather file
-  packages: !include_dir_named packages
-  python_script:
   
-# Show links to resources in log and frontend
-introduction:
-
 # Enables the frontend
 frontend:
 
 # Enables configuration UI
 config:
-
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 
@@ -41,22 +34,34 @@ updater:
   # Optional, allows Home Assistant developers to focus on popular components.
   # include_used_components: true
 
+mqtt:
+  broker: m15.cloudmqtt.com
+  port: 10060
+  keepalive: 60
+  client_id: ha
+  username: ha
+  password: !secret mqtt_passwd
+
+zone:
+  - name: home
+    latitude: !secret latitude_home
+    longitude: !secret longitude_home
+    radius: 250
+    icon: mdi:home
+
+  - name: office
+    latitude: !secret latitude_work
+    longitude: !secret longitude_work
+    radius: 250
+    icon: mdi:office
+
+#device_tracker:
+#  - platform: owntracks
+#    mqtt_topic: "#"
+        
 # Discover some devices automatically
 discovery:
 
-# Weather prediction
-sensor 1:
-  platform: yr
-
-# System Information
-sensor 2:
-  platform: systemmonitor
-  resources:
-    - type: 'disk_use'
-      arg: '/home'
-    - type: 'memory_use_percent'
-    - type: 'processor_use'
-        
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
@@ -72,9 +77,46 @@ map:
 # Track the sun
 sun:
 
+#device_tracker:
+#  - platform: owntracks
+#    mqtt_topic: "#"
+        
 # Sensors
-sensor:
+sensor:                        
+  - platform: darksky
+    api_key: !secret darksky_api
+    name: DarkSky
+    monitored_conditions:
+      - temperature
+      - cloud_cover
+      - humidity
+      - pressure
+      - temperature_high
+      - temperature_low
+
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /config
+      - type: memory_use_percent
+      - type: load_1m
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+      - type: processor_use
+      - type: last_boot
+
+
+  - platform: yr
   
+  - platform: systemmonitor
+    resources:
+      - type: 'disk_use'
+        arg: '/home'
+      - type: 'memory_use_percent'
+      - type: 'processor_use'
+            
 # Text to speech
 tts:
   - platform: google
@@ -82,18 +124,14 @@ tts:
 # Cloud
 cloud:
 
-# Weather
-weather:
-  - platform: yweather
-
 # Ifttt
 ifttt:
-  key: dxDgO01S2TVISmAm_2OktD
+  key: !secret ifttt_key
 
 # Google
-google:
-  client_id: 634055868338-a2ag1vt8i2923bioclp30kvkommb78u4.apps.googleusercontent.com
-  client_secret: REPicv0e-CqVTmxCJ76LfgJf
+#google:
+#  client_id: 634055868338-a2ag1vt8i2923bioclp30kvkommb78u4.apps.googleusercontent.com
+#  client_secret: REPicv0e-CqVTmxCJ76LfgJf
 
 # Camera
 #camera:

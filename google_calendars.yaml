@@ -1,0 +1,47 @@
+- cal_id: coinkorea.info@gmail.com
+  entities:
+  - device_id: coinkoreainfogmailcom
+    ignore_availability: true
+    name: coinkorea.info@gmail.com
+    track: true
+- cal_id: viper5k@gmail.com
+  entities:
+  - device_id: bncp__
+    ignore_availability: true
+    name: "BNCP \uC6B4\uC601 \uC77C\uC815"
+    track: true
+
+- cal_id: fgf3pkn9v7ej8kp1mlp53aven8@group.calendar.google.com
+  entities:
+  - device_id: work_hour
+    ignore_availability: true
+    name: Work Hour
+    track: true
+
+- cal_id: coolesty@gmail.com
+  entities:
+  - device_id: email_work
+    ignore_availability: true
+    name: Email Work
+    track: true
+
+- cal_id: ithwenc@gmail.com
+  entities:
+  - device_id: it_
+    ignore_availability: true
+    name: "IT\uAE30\uD68D\uD300 \uC77C\uC815\uACF5\uC720"
+    track: true
+
+- cal_id: nn01kvnmqb5664ai3k3rhh0mk0@group.calendar.google.com
+  entities:
+  - device_id: nasinterfaced_nas
+    ignore_availability: true
+    name: NAS(Interfaced NAS)
+    track: true
+
+- cal_id: '#contacts@group.v.calendar.google.com'
+  entities:
+  - device_id: contacts
+    ignore_availability: true
+    name: Contacts
+    track: true

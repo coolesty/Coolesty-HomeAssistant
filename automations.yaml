@@ -1,0 +1,36 @@
+- id: '1543499102595'
+  alias: '[위치]집도착시 알림'
+  trigger:
+  - entity_id: device_tracker.owntracks_phone
+    event: enter
+    platform: zone
+    zone: zone.home
+  condition: []
+  action:
+  - data:
+      event: ha_noti
+      value1: Welcome Back, Coolesty
+    service: ifttt.trigger
+- id: '1543499328633'
+  alias: '[동작]HomeAssistant Startup Notification(IFTTT)'
+  trigger:
+  - event: start
+    platform: homeassistant
+  condition: []
+  action:
+  - data:
+      event: ha_noti
+      value1: Startup HomeAssistant
+    service: ifttt.trigger
+- id: '1543500692903'
+  alias: '[날씨]영하 알림'
+  trigger:
+  - below: '0'
+    entity_id: sensor.darksky_temperature
+    platform: numeric_state
+  condition: []
+  action:
+  - data:
+      event: ha_noti
+      value1: 영하 입니다.
+    service: ifttt.trigger

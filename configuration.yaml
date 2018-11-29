@@ -128,11 +128,6 @@ cloud:
 ifttt:
   key: !secret ifttt_key
 
-# Google
-#google:
-#  client_id: 634055868338-a2ag1vt8i2923bioclp30kvkommb78u4.apps.googleusercontent.com
-#  client_secret: REPicv0e-CqVTmxCJ76LfgJf
-
 # Camera
 #camera:
 #  - platform: xiaomi
